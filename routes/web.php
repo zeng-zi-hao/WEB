@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('shares', \App\Http\Controllers\SharesController::class);
 
-#Route::get('/',function (){    return view('welcome');});
+Route::get('/',function (){    return view('welcome2');});
 
-Route::get('/',[\App\Http\Controllers\SharesController::class, 'index'])->name('root');
+Route::get('/share',[\App\Http\Controllers\SharesController::class, 'index'])->name('share');
 
 
 Route::middleware([
