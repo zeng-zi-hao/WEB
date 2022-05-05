@@ -12,7 +12,7 @@ class SharesController extends Controller
     }
 
     public function index(){
-        $shares = Share::orderBy('id','desc')->paginate(3);
+        $shares = Share::orderBy('id','desc')->paginate(10);
         return view('shares.index',['shares' => $shares]);
     }
 
@@ -32,7 +32,7 @@ class SharesController extends Controller
         ]);
 
         auth()->user()->shares()->create($content);
-        return redirect()->route('root')->with('notice','share success!!');
+        return redirect()->route('share')->with('notice','share success!!');
     }
 
     public function edit($share_id){
@@ -49,12 +49,12 @@ class SharesController extends Controller
         ]);
 
         $share->update($content);
-        return redirect()->route('root')->with('notice','Update success!!');
+        return redirect()->route('share')->with('notice','Update success!!');
     }
 
     public function destroy($share_id){
         $share = auth()->user()->shares->find($share_id);
         $share->delete();
-        return redirect()->route('root')->with('notice','Delete success!!');
+        return redirect()->route('share')->with('notice','Delete success!!');
     }
 }

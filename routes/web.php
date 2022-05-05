@@ -6,6 +6,8 @@ Route::resource('shares', \App\Http\Controllers\SharesController::class);
 
 Route::get('/',function (){    return view('welcome2');});
 
+Route::get('/how_to_care_cat',function (){    return view('how_to_care_cat');})->name('care');
+
 Route::get('/share',[\App\Http\Controllers\SharesController::class, 'index'])->name('share');
 
 

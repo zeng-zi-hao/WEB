@@ -12,7 +12,7 @@
 <body class="bg-gray-200">
 
 <div class="bg-gray-800 flex justify-center">
-    <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> How to care cat </a></div>
+    <div class="hover:bg-gray-400 mr-3"><a href="{{route('care')}}" class="text-lg text-white"> How to care cat </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('share')}}" class="text-lg text-white"> Share cat </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> Adopt a furry child </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> Pet supplies </a></div>
