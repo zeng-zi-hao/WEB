@@ -12,19 +12,19 @@
 <body class="bg-gray-200">
 
 <div class="bg-gray-800 flex justify-center">
-    <div class="hover:bg-gray-400 mr-3"><a href="{{route('care')}}" class="text-lg text-white"> How to care cat </a></div>
-    <div class="hover:bg-gray-400 mr-3"><a href="{{route('share')}}" class="text-lg text-white"> Share cat </a></div>
-    <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> Adopt a furry child </a></div>
-    <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> Pet supplies </a></div>
+    <div class="hover:bg-gray-400 mr-3"><a href="{{route('care')}}" class="text-lg text-white"> 如何照顧貓咪 </a></div>
+    <div class="hover:bg-gray-400 mr-3"><a href="{{route('share')}}" class="text-lg text-white"> 分享事物 </a></div>
+    <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> 領養毛小孩 </a></div>
+    <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> 寵物補給品 </a></div>
 
     @if (Route::has('login'))
         @auth
-            <div class="hover:bg-gray-400 mr-3"><a href="{{ url('/dashboard') }}" class="text-lg text-white">Personal Information</a></div>
+            <div class="hover:bg-gray-400 mr-3"><a href="{{ url('/dashboard') }}" class="text-lg text-white"> 個人資訊 </a></div>
         @else
-            <div class="hover:bg-gray-400 mr-3"><a href="{{ route('login') }}" class="text-lg text-white">Log in</a></div>
+            <div class="hover:bg-gray-400 mr-3"><a href="{{ route('login') }}" class="text-lg text-white"> 登入 </a></div>
 
             @if (Route::has('register'))
-                <div class="hover:bg-gray-400 mr-3"><a href="{{ route('register') }}" class="text-lg text-white">Register</a></div>
+                <div class="hover:bg-gray-400 mr-3"><a href="{{ route('register') }}" class="text-lg text-white"> 註冊 </a></div>
             @endif
         @endauth
     @endif

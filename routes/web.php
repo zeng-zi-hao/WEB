@@ -11,6 +11,7 @@ Route::get('/how_to_care_cat',function (){    return view('how_to_care_cat');})-
 Route::get('/share',[\App\Http\Controllers\SharesController::class, 'index'])->name('share');
 
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -20,3 +21,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

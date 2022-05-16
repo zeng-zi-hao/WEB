@@ -29,7 +29,7 @@
         </div>
 
         <div class="action">
-            <button type="submit" class="px-3 py-2 rounded bg-gray-200 hover:bg-gray-400">share</button>
+            <button type="submit" class="px-3 py-2 bg-gray-500 text-white hover:bg-gray-400 hover:text-gray-900 rounded">share</button>
         </div>
     </form>
 @endsection
