@@ -3,7 +3,7 @@
 @section('main')
     <div class="m-3">
         <br>
-        <h1 class="text-3xl">You can share anything</h1>
+        <h1 class="text-3xl">你可以分享任何事物</h1>
         <br>
         <a href="{{route('shares.create')}}" class="bg-gray-500 text-white hover:bg-gray-400 hover:text-gray-900 rounded p-2">share</a>
         <br>
@@ -14,7 +14,7 @@
         @foreach($shares as $share)
             <div class="border-t border-gray-300 my-1 p-2">
                 <h2 class="text-lg font-bold">
-                    <a href="{{route('shares.show',$share)}}">
+                    <a href="{{route('shares.show',$share)}}" class="text-indigo-500 text-2xl">
                         {{$share->title}}
                     </a>
                 </h2>
