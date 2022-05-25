@@ -1,13 +1,19 @@
 @extends('layouts/share')
 
 @section('main')
-    <div class="m-3">
+    <div class="m-5">
         <br>
         <h1 class="text-3xl">你可以分享任何事物</h1>
         <br>
-        <a href="{{route('shares.create')}}" class="bg-gray-500 text-white hover:bg-gray-400 hover:text-gray-900 rounded p-2">share</a>
-        <br>
-        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="{{route('shares.create')}}" class="bg-gray-500 text-white hover:bg-gray-400 hover:text-gray-900 rounded p-2">share</a></th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th><a href="{{route('self_share_history')}}" class="bg-gray-500 text-white hover:bg-gray-400 hover:text-gray-900 rounded p-2">share history</a></th>
+                </tr>
+            </thead>
+        </table>
         <br>
         <br>
 
@@ -20,16 +26,7 @@
                 </h2>
 
                 <p>{{$share->created_at}} from {{$share->user->name}}</p>
-
-                <div class="flex">
-                    <a class="mr-2" href="{{route('shares.edit',$share)}}">Edit</a>
-
-                    <form action="{{route('shares.destroy',$share)}}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="px-2 bg-red-500 text-white rounded">Delete</button>
-                    </form>
-                </div>
+                <br>
             </div>
         @endforeach
         {{$shares->links()}}

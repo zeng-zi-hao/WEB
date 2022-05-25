@@ -32,7 +32,7 @@ class SharesController extends Controller
         ]);
 
         auth()->user()->shares()->create($content);
-        return redirect()->route('share')->with('notice','share success!!');
+        return redirect()->route('share')->with('notice','分享成功!');
     }
 
     public function edit($share_id){
@@ -49,12 +49,17 @@ class SharesController extends Controller
         ]);
 
         $share->update($content);
-        return redirect()->route('share')->with('notice','Update success!!');
+        return redirect()->route('self_share_history')->with('notice','Update success!!');
     }
 
     public function destroy($share_id){
         $share = auth()->user()->shares->find($share_id);
         $share->delete();
-        return redirect()->route('share')->with('notice','Delete success!!');
+        return redirect()->route('self_share_history')->with('notice','Delete success!!');
+    }
+
+    public function sharesHistory(){
+        $historys = auth()->user()->shares->all();
+        return view('self_share_history',compact('historys'));
     }
 }

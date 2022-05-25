@@ -20,7 +20,7 @@
 
     @if (Route::has('login'))
         @auth
-            <div class="hover:bg-gray-400 mr-3"><a href="{{ url('/dashboard') }}" class="text-lg text-white"> 個人資訊 </a></div>
+            <div class="hover:bg-gray-400 mr-3"><a href="{{ route('profile.show') }}" class="text-lg text-white"> 個人資訊 </a></div>
         @else
             <div class="hover:bg-gray-400 mr-3"><a href="{{ route('login') }}" class="text-lg text-white"> 登入 </a></div>
 
@@ -34,6 +34,7 @@
 @yield('main')
 @yield('products_list')
 @yield('cart')
+
 
 </body>
 </html>

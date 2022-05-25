@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+Route::get('/',function (){    return view('welcome2');});
 
 Route::resource('shares', \App\Http\Controllers\SharesController::class);
-
-Route::get('/',function (){    return view('welcome2');});
+Route::get('/self_share_history',[\App\Http\Controllers\SharesController::class, 'sharesHistory'])->name('self_share_history');
 
 Route::get('/how_to_care_cat',function (){    return view('how_to_care_cat');})->name('care');
 
