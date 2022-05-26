@@ -31,10 +31,17 @@
     @endif
 </div>
 
+@if(session()->has('notice'))
+    <div class="bg-pink-300 px-3 py-2 rounded">
+        {{session()->get('notice')}}
+    </div>
+@endif
+
 @yield('main')
 @yield('products_list')
 @yield('cart')
-
+@yield('show')
+@yield('self_share_history')
 
 </body>
 </html>

@@ -62,4 +62,5 @@ class SharesController extends Controller
         $historys = auth()->user()->shares->all();
         return view('self_share_history',compact('historys'));
     }
+
 }

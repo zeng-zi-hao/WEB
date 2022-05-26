@@ -1,6 +1,6 @@
-@extends('layouts/share')
+@extends('layouts/title')
 
-@section('main')
+@section('self_share_history')
     <div class="m-5">
         <br>
         <h1 class="text-3xl">分享過的文章</h1>

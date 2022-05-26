@@ -7,8 +7,8 @@
     <title>Add to cart</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-<div  class="bg-white">
+<body class="bg-gray-200">
+<div>
     <header>
         <div class="container  px-6 py-3 mx-auto">
                 <a href="{{route('products.list')}}" class="text-white bg-indigo-600 p-2 rounded" >返回購物區</a>
