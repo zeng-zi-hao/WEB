@@ -25,7 +25,7 @@
                     <form action="{{route('shares.destroy',$history)}}" method="post">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="px-2 bg-red-500 text-white rounded">Delete</button>
+                        <button type="submit" class="px-2 bg-red-500 hover:underline text-white rounded">Delete</button>
                     </form>
                 </div>
             </div>

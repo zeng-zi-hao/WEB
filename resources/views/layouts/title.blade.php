@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Meow</title>
 </head>
 
@@ -15,7 +16,7 @@
 <div class="bg-gray-800 flex justify-center">
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('care')}}" class="text-lg text-white"> 如何照顧貓咪 </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('share')}}" class="text-lg text-white"> 分享事物 </a></div>
-    <div class="hover:bg-gray-400 mr-3"><a href="#" class="text-lg text-white"> 領養毛小孩 </a></div>
+    <div class="hover:bg-gray-400 mr-3"><a href="{{route('adoption_index')}}" class="text-lg text-white"> 領養毛小孩 </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('products.list')}}" class="text-lg text-white"> 寵物補給品 </a></div>
 
     @if (Route::has('login'))
@@ -42,6 +43,8 @@
 @yield('cart')
 @yield('show')
 @yield('self_share_history')
+@yield('adoption')
+@yield('adoption_index')
 
 </body>
 </html>

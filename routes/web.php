@@ -12,6 +12,9 @@ Route::get('/how_to_care_cat',function (){    return view('how_to_care_cat');})-
 
 Route::get('/share',[\App\Http\Controllers\SharesController::class, 'index'])->name('share');
 
+Route::get('/adoption_index',function (){    return view('adoption/adoption_index');})->name('adoption_index');
+Route::get('/adoption',function (){    return view('adoption/adoption');})->name('adoption');
+
 Route::get('products.list', [ProductController::class, 'productList'])->name('products.list');
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');

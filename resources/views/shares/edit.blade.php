@@ -33,7 +33,7 @@
 
         <div class="action">
             <a href="JavaScript:history.back(-1)" class="bg-indigo-500 rounded p-2 text-white">back</a>
-            <button type="submit" class="p-1 rounded bg-gray-400 text-white">update</button>
+            <button type="submit" class="p-1 rounded bg-gray-400 hover:underline text-white">update</button>
         </div>
     </form>
 </div>

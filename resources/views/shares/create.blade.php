@@ -33,7 +33,7 @@
 
             <div class="action">
                 <a href="{{route('share')}}" class="bg-indigo-500 rounded p-2 text-white">back</a>&nbsp;&nbsp;
-                <button type="submit" class="px-2 py-1 bg-gray-500 text-white hover:bg-gray-400 hover:text-gray-900 rounded">share</button>
+                <button type="submit" class="px-2 py-1 bg-gray-500 text-white hover:underline rounded">share</button>
             </div>
         </form>
     </div>
