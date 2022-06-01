@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('adoptions', function (Blueprint $table) {
             $table->id();
+            $table->string('pet_name');
+            $table->enum('gender',['boy','girl']);
+            $table->integer('age');
+            $table->text('health_status');
+            $table->text('adoption_reason');
+            $table->string('img_path');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

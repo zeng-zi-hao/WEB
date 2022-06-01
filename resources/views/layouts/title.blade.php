@@ -16,7 +16,7 @@
 <div class="bg-gray-800 flex justify-center">
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('care')}}" class="text-lg text-white"> 如何照顧貓咪 </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('share')}}" class="text-lg text-white"> 分享事物 </a></div>
-    <div class="hover:bg-gray-400 mr-3"><a href="{{route('adoption_index')}}" class="text-lg text-white"> 領養毛小孩 </a></div>
+    <div class="hover:bg-gray-400 mr-3"><a href="{{route('adoption.index')}}" class="text-lg text-white"> 領養毛小孩 </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('products.list')}}" class="text-lg text-white"> 寵物補給品 </a></div>
 
     @if (Route::has('login'))

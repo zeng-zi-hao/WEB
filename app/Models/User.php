@@ -63,4 +63,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Share');
     }
+
+    public function adoptions(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\Adoption');
+    }
+
 }

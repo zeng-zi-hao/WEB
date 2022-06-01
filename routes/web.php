@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdoptionController;
+
 Route::get('/',function (){    return view('welcome2');});
 
 Route::resource('shares', \App\Http\Controllers\SharesController::class);
@@ -12,8 +14,9 @@ Route::get('/how_to_care_cat',function (){    return view('how_to_care_cat');})-
 
 Route::get('/share',[\App\Http\Controllers\SharesController::class, 'index'])->name('share');
 
-Route::get('/adoption_index',function (){    return view('adoption/adoption_index');})->name('adoption_index');
+Route::get('/adoption_index',function (){    return view('adoption/adoption_index');})->name('adoption.index');
 Route::get('/adoption',function (){    return view('adoption/adoption');})->name('adoption');
+Route::post('adoption',[AdoptionController::class, 'store'])->name('adoption.store');
 
 Route::get('products.list', [ProductController::class, 'productList'])->name('products.list');
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
