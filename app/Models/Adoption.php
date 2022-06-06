@@ -14,5 +14,5 @@ class Adoption extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    protected $fillable=['pet_name','gender','age','health_status','adoption_reason','img_path'];
+    protected $fillable=['pet_name','gender','age','health_status','adoption_reason','path'];
 }

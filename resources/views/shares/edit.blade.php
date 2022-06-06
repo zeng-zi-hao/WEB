@@ -1,8 +1,10 @@
-
+<a href="JavaScript:history.back(-1)" class="bg-indigo-500 rounded p-2 text-white">back</a>
 @extends('layouts/share')
 
 @section('main')
 <div class="m-5">
+    <a href="JavaScript:history.back(-1)" class="bg-indigo-500 rounded p-2 text-white">back</a>
+    <br><br>
     <h1 class="text-3xl">編輯你的內容</h1>
     <br>
 
@@ -32,7 +34,6 @@
         <br>
 
         <div class="action">
-            <a href="JavaScript:history.back(-1)" class="bg-indigo-500 rounded p-2 text-white">back</a>
             <button type="submit" class="p-1 rounded bg-gray-400 hover:underline text-white">update</button>
         </div>
     </form>

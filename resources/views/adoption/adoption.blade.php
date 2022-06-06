@@ -7,12 +7,23 @@
         <br>
         <br>
     </div>
+
     <div class="mx-5 container">
-        <form action="{{route('adoption.store')}}" method="post">
+        @if($errors->any())
+            <div class="errors p-3 bg-red-500 rounded">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            <br>
+        @endif
+        <form action="{{route('adoption.store')}}" enctype="multipart/form-data" method="post">
             @csrf
             <div class="d-flex">
                 <div>
-                    <input accept="image/*" type='file' id="imgInp" name="image" /><br><br>
+                    <input accept="image/*" type='file' id="imgInp" name="path"  /><br><br>
                     <img id="blah" style="width:150px;height:150px" class="border-solid rounded" src="#"/>
                     <br>
                     <script>
@@ -28,32 +39,32 @@
                 <div>
                     <div class="field my-2">
                         <label>寵物名稱</label>&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="pet_name" class="border-gray-400 p-1">
+                        <input type="text" name="pet_name" value="{{old('pet_name')}}" class="border-gray-400 p-1">
                     </div>
                     <br>
 
                     <div class="field my-1">
                         <label>性別</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gender" value="boy"> 公
-                        <input type="radio" name="gender" value="girl"> 母
+                        <input type="radio" name="gender" value="公"> 公
+                        <input type="radio" name="gender" value="母"> 母
                     </div>
                     <br>
 
                     <div class="field my-1">
                         <label>年齡</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="age"  class="border-gray-400 p-1">
+                        <input type="text" name="age" value="{{old('age')}}" class="border-gray-400 p-1">
                     </div>
                     <br>
 
                     <div class="field my-2">
                         <label>健康狀況</label>&nbsp;&nbsp;&nbsp;
-                        <textarea name="health_status" cols="25" rows="3" class="border-gray-400"></textarea>
+                        <textarea name="health_status" cols="25" rows="3" class="border-gray-400">{{old('health_status')}}</textarea>
                     </div>
                     <br>
 
                     <div class="field my-1">
                         <label>送養原因&nbsp;&nbsp;</label>
-                        <textarea name="adoption_reason" cols="25" rows="8" class="border-gray-400"></textarea>
+                        <textarea name="adoption_reason" cols="25" rows="8" class="border-gray-400">{{old('adoption_reason')}}</textarea>
                     </div>
                     <br>
 

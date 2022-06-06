@@ -45,6 +45,7 @@
 @yield('self_share_history')
 @yield('adoption')
 @yield('adoption_index')
+@yield('adoption_show')
 
 </body>
 </html>
