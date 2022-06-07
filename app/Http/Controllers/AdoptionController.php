@@ -10,16 +10,26 @@ use Illuminate\Support\File;
 class AdoptionController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except(['index','show']);
+        $this->middleware('auth')->except(['index','show','adoption_index']);
     }
 
     public function index(){
-        $adoptions = Adoption::all();
+        $adoptions = Adoption::orderBy('id','desc')->paginate(10);
         return view('adoption/adoption_index',['adoptions' => $adoptions]);
     }
 
-    public function show(){
-        return view('adoption/adoption_show');
+    public function show($id){
+        $adoption = Adoption::find($id);
+        return view('adoption/adoption_show',['adoptions'=>$adoption]);
+    }
+
+    public function adoptionHistory(){
+        $historys = auth()->user()->adoptions->all();
+        return view('adoption/adoption_history',compact('historys'));
+    }
+
+    public function create(){
+        return view('adoption/adoption_create');
     }
 
     public function store(Request $request){
@@ -42,34 +52,44 @@ class AdoptionController extends Controller
             'age' => $request->input('age'),
             'health_status' => $request->input('health_status'),
             'adoption_reason' => $request->input('adoption_reason'),
-            'path' => $newImageName
+            'path' => $newImageName,
         ]);
         return redirect()->route('adoption.index')->with('notice','已發布');
     }
 
+    public function edit($id){
+        $adoption = auth()->user()->adoptions->find($id);
+        return view('adoption/adoption_edit',['adoption'=>$adoption]);
+    }
 
-//    public function store(Request $request){
-//
-//        $content = $request->validate([
-//            'pet_name' => 'required',
-//            'gender' => 'required',
-//            'age' => 'required',
-//            'health_status' => 'required',
-//            'adoption_reason' => 'required',
-//            'path' => 'required|mimes:jpeg,png,jpeg|max:5048',
-//        ]);
-//
-//        $newImageName = time() . '-' . $request->pet_name . '.' .$request->path->extension();
-//        $request->path->move(public_path('images'),$newImageName);
-//
-//
-//        $name = $request->file('path')->getClientOriginalName();
-//        $extension = $request->file('path')->getClientOriginalExtension();
-//        $request['pet_name'] = $name;
-//
-//        $request->file('path')->store('public/images');
-//
-//        auth()->user()->adoptions()->create($content);
-//        return redirect()->route('adoption.index')->with('notice','已發布');
-//    }
+    public function update(Request $request, $id){
+        $share = auth()->user()->adoptions->find($id);
+        $request->validate([
+            'pet_name' => 'required',
+            'gender' => 'required',
+            'age' => 'integer|min:0|max:40',
+            'health_status' => 'required',
+            'adoption_reason' => 'required',
+            'path' => 'required|mimes:jpeg,png,jpeg|max:5048',
+        ]);
+
+        $newImageName = time() . '-' . $request->pet_name . '.' .$request->path->extension();
+        $request->path->move(public_path('storage/images'),$newImageName);
+
+        auth()->user()->adoptions()->update([
+            'pet_name' => $request->input('pet_name'),
+            'gender' => $request->input('gender'),
+            'age' => $request->input('age'),
+            'health_status' => $request->input('health_status'),
+            'adoption_reason' => $request->input('adoption_reason'),
+            'path' => $newImageName,
+        ]);
+        return redirect()->route('adoption.index')->with('notice','已發布');
+    }
+
+    public function destroy($id){
+        $share = auth()->user()->adoptions->find($id);
+        $share->delete();
+        return redirect()->route('self_adoption_history')->with('notice','Delete success!!');
+    }
 }

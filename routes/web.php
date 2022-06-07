@@ -17,10 +17,12 @@ Route::get('/self_share_history',[\App\Http\Controllers\SharesController::class,
 Route::get('/share',[\App\Http\Controllers\SharesController::class, 'index'])->name('share');
 
 //---adoption---//
+Route::resource('adoptions',AdoptionController::class);
 Route::get('/adoption_index',[AdoptionController::class, 'index'])->name('adoption.index');
-Route::get('/adoption',function (){    return view('adoption/adoption');})->name('adoption');
-Route::get('/adoption_show', [AdoptionController::class,'show'])->name('adoptions.show');
-Route::post('adoption',[AdoptionController::class, 'store'])->name('adoption.store');
+Route::get('/adoption_history',[AdoptionController::class, 'adoptionHistory'])->name('self_adoption_history');
+//Route::get('/adoption',function (){    return view('adoption/adoption');})->name('adoption');
+//Route::get('/adoption_show', [AdoptionController::class,'show'])->name('adoptions.show');
+//Route::post('adoption',[AdoptionController::class, 'store'])->name('adoption.store');
 
 //---cart----//
 Route::get('products.list', [ProductController::class, 'productList'])->name('products.list');

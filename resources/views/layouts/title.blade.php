@@ -46,6 +46,7 @@
 @yield('adoption')
 @yield('adoption_index')
 @yield('adoption_show')
+@yield('adoption_history')
 
 </body>
 </html>

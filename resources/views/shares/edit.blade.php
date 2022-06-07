@@ -1,4 +1,3 @@
-<a href="JavaScript:history.back(-1)" class="bg-indigo-500 rounded p-2 text-white">back</a>
 @extends('layouts/share')
 
 @section('main')
@@ -38,6 +37,5 @@
         </div>
     </form>
 </div>
-
 
 @endsection
