@@ -37,7 +37,7 @@ class AdoptionController extends Controller
         $request->validate([
             'pet_name' => 'required',
             'gender' => 'required',
-            'age' => 'required',
+            'age' => 'integer|min:0|max:40',
             'health_status' => 'required',
             'adoption_reason' => 'required',
             'path' => 'required|mimes:jpeg,png,jpeg|max:5048',
@@ -66,7 +66,6 @@ class AdoptionController extends Controller
         $share = auth()->user()->adoptions->find($id);
         $request->validate([
             'pet_name' => 'required',
-            'gender' => 'required',
             'age' => 'integer|min:0|max:40',
             'health_status' => 'required',
             'adoption_reason' => 'required',
@@ -76,9 +75,8 @@ class AdoptionController extends Controller
         $newImageName = time() . '-' . $request->pet_name . '.' .$request->path->extension();
         $request->path->move(public_path('storage/images'),$newImageName);
 
-        auth()->user()->adoptions()->update([
+        auth()->user()->adoptions()->find($id)->update([
             'pet_name' => $request->input('pet_name'),
-            'gender' => $request->input('gender'),
             'age' => $request->input('age'),
             'health_status' => $request->input('health_status'),
             'adoption_reason' => $request->input('adoption_reason'),

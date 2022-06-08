@@ -45,9 +45,7 @@
                     <br>
 
                     <div class="field my-1">
-                        <label>性別</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gender" value="{{$adoption -> gender}}"> 公
-                        <input type="radio" name="gender" value="{{$adoption -> gender}}"> 母
+                        <label>性別&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$adoption -> gender}}</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                     <br>
 
