@@ -31,7 +31,7 @@
                                 <tr>
                                     <td class="hidden pb-4 md:table-cell">
                                         <a href="#">
-                                            <img src="{{ $item->attributes->image }}" class="w-20 rounded" alt="Thumbnail">
+                                            <img src="{{ URL::asset('storage/images/' . $item->attributes->image) }}" class="w-20 rounded" style="width: 50px;height: 50px" alt="Thumbnail">
                                         </a>
                                     </td>
                                     <td>
