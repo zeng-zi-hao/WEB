@@ -37,7 +37,6 @@
                                     <td>
                                         <a href="#">
                                             <p class="mb-2 md:ml-4">{{ $item->name }}</p>
-
                                         </a>
                                     </td>
                                     <td class="justify-center mt-6 md:justify-end md:flex">
@@ -48,7 +47,7 @@
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{ $item->id}}" >
                                                     <input type="number" name="quantity" value="{{ $item->quantity }}"
-                                                           class="w-8 text-center bg-gray-300" min="1"/>
+                                                           class="w-7 text-center bg-gray-300" min="1"/>
                                                     <button type="submit" class="px-2 pb-2 ml-2 text-white bg-blue-500 rounded">update</button>
                                                 </form>
                                             </div>

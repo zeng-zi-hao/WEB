@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('age');
             $table->text('health_status');
             $table->text('adoption_reason');
-            $table->string('img_path');
+            $table->string('path');
             $table->foreignId('user_id');
             $table->timestamps();
         });
