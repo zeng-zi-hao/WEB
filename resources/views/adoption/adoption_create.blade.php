@@ -45,8 +45,8 @@
 
                     <div class="field my-1">
                         <label>性別</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gender" value="公"> 公
-                        <input type="radio" name="gender" value="母"> 母
+                        <input type="radio" name="gender" value="boy"> 公
+                        <input type="radio" name="gender" value="girl"> 母
                     </div>
                     <br>
 
