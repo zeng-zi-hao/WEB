@@ -35,11 +35,11 @@ class AdoptionController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'pet_name' => 'required',
-            'gender' => 'required',
+            'pet_name' => 'required|max:100',
+            'gender' => 'required|max:10',
             'age' => 'integer|min:0|max:40',
-            'health_status' => 'required',
-            'adoption_reason' => 'required',
+            'health_status' => 'required|max:100',
+            'adoption_reason' => 'required|max:255',
             'path' => 'required|mimes:jpeg,png,jpeg|max:5048',
         ]);
 

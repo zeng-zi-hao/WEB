@@ -24,7 +24,7 @@
             <div class="d-flex">
                 <div>
                     <input accept="image/*" type='file' id="imgInp" name="path"  /><br><br>
-                    <img id="blah" style="width:150px;height:150px" class="border-solid rounded" src="#"/>
+                    <img id="blah" class="rounded-2xl" style="width:150px;height:150px" class="border-solid rounded" src="#"/>
                     <br>
                     <script>
                         imgInp.onchange = evt => {

@@ -21,10 +21,9 @@
             <div class="border-t border-gray-300 my-1 p-2">
                 <h2 class="text-lg font-bold">
                     <a href="{{route('shares.show',$share)}}" class="text-indigo-500 text-2xl">
-                        {{$share->title}}
+                        {{ \Illuminate\Support\str::limit($share->title,8,'...')}}
                     </a>
                 </h2>
-
                 <p>{{$share->created_at}} from {{$share->user->name}}</p>
                 <br>
             </div>

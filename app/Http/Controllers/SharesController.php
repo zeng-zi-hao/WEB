@@ -44,8 +44,8 @@ class SharesController extends Controller
     public function update(Request $request, $share_id){
         $share = auth()->user()->shares->find($share_id);
         $content = $request->validate([
-           'title' => 'required',
-           'content' => 'required|min:10'
+           'title' => 'required|max:255',
+           'content' => 'required|min:10|max:255'
         ]);
 
         $share->update($content);

@@ -5,7 +5,7 @@
         <a href="JavaScript:history.back(-1)" class="bg-indigo-500 rounded p-2 text-white">back</a>
         <br><br>
 
-        <img src="{{ URL::asset('storage/images/' . $adoptions->path)}}" style="width:150px;height:150px">
+        <img src="{{ URL::asset('storage/images/' . $adoptions->path)}}" class="rounded-2xl" style="width:150px;height:150px">
         <br>
         <h1 class="text-3xl font-bold">寵物名稱:{{$adoptions->pet_name}}</h1>
         <br>
