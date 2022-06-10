@@ -1,48 +1,56 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Meow</title>
+</head>
 
-        <x-jet-validation-errors class="mb-4" />
+<body class="bg-gray-200">
+    <form action="{{route('login.store')}}" method="post">
+        @csrf
+        <div class="flex h-screen">
+            <div class="m-auto">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+                @if($errors->any())
+                    <div class="errors p-3 bg-red-500 rounded">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <br>
+                @endif
+
+                @if(session()->has('notice'))
+                    <div class="bg-pink-300 px-3 py-2 rounded">
+                        {{session()->get('notice')}}
+                    </div>
+                @endif
+
+                <div class="m-3 flex justify-center">
+                    <a href="{{route('root')}}" class="rounded-full"><img src="{{ URL::asset('storage/images/logo_1.jpg')}}"  class="rounded-full border-2" style="width:150px;height:150px"></a>
+                </div>
+
+                <div>
+                    帳號:&nbsp;&nbsp;&nbsp;<input type="text" name='email' size="22">
+                    <br><br>
+                    密碼:&nbsp;&nbsp;&nbsp;<input type="password" name="password" size="22">
+                    <br><br>
+                </div>
+
+                <div class="flex justify-end">
+                    <div class="action"><button type="submit" class="mr-3 bg-blue-500 hover:underline rounded p-1 text-white">登入</button></div>
+                    <a href="{{route('register.store')}}" class="mr-2 bg-blue-500 rounded p-1 text-white">註冊</a>
+                </div>
             </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-{{--                @if (Route::has('password.request'))--}}
-{{--                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">--}}
-{{--                        {{ __('Forgot your password?') }}--}}
-{{--                    </a>--}}
-{{--                @endif--}}
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </form>
+</body>
+</html>

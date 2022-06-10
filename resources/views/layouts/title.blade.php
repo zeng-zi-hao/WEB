@@ -19,15 +19,18 @@
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('adoption.index')}}" class="text-lg text-white"> 領養毛小孩 </a></div>
     <div class="hover:bg-gray-400 mr-3"><a href="{{route('products.list')}}" class="text-lg text-white"> 寵物補給品 </a></div>
 
+
+
     @if (Route::has('login'))
         @auth
-            <div class="hover:bg-gray-400 mr-3"><a href="{{ route('profile.show') }}" class="text-lg text-white"> 個人資訊 </a></div>
+            <div class="hover:bg-gray-400 mr-3"><a href="{{route('profile')}}" class="text-lg text-white"> 個人資料 </a></div>
+            <div class="hover:bg-gray-400 mr-3"><a href="{{route('logout')}}" class="text-lg text-white"> 登出 </a></div>
         @else
-            <div class="hover:bg-gray-400 mr-3"><a href="{{ route('login') }}" class="text-lg text-white"> 登入 </a></div>
+            <div class="hover:bg-gray-400 mr-3"><a href="{{route('login')}}" class="text-lg text-white"> 登入 </a></div>
 
-            @if (Route::has('register'))
-                <div class="hover:bg-gray-400 mr-3"><a href="{{ route('register') }}" class="text-lg text-white"> 註冊 </a></div>
-            @endif
+{{--            @if (Route::has('register'))--}}
+{{--                <div class="hover:bg-gray-400 mr-3"><a href="{{ route('register') }}" class="text-lg text-white"> 註冊 </a></div>--}}
+{{--            @endif--}}
         @endauth
     @endif
 </div>
@@ -47,6 +50,7 @@
 @yield('adoption_index')
 @yield('adoption_show')
 @yield('adoption_history')
+@yield('profile')
 
 </body>
 </html>

@@ -4,17 +4,31 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdoptionController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\SharesController;
+use App\Http\Controllers\ProfileController;
 
 //---index---//
-Route::get('/',function (){    return view('welcome2');});
+Route::get('/',function (){    return view('welcome');})->name('root');
+
+//---User---//
+Route::get('/login',[UsersController::class, 'login_index'])->name('login');
+Route::get('/logout',[UsersController::class, 'logout'])->name('logout');
+Route::post('login',[UsersController::class, 'login'])->name('login.store');
+Route::post('register',[UsersController::class, 'register'])->name('register.store');
+
+//---profile---//
+Route::get('/profile',[ProfileController::class, 'profile_index'])->name('profile');
+Route::post('update_information',[ProfileController::class, 'update_information'])->name('update_information');
+Route::post('update_password',[ProfileController::class, 'update_password'])->name('update_password');
 
 //---how_to_care_cat---//
 Route::get('/how_to_care_cat',function (){    return view('how_to_care_cat');})->name('care');
 
 //---share---//
-Route::resource('shares', \App\Http\Controllers\SharesController::class);
-Route::get('/self_share_history',[\App\Http\Controllers\SharesController::class, 'sharesHistory'])->name('self_share_history');
-Route::get('/share',[\App\Http\Controllers\SharesController::class, 'index'])->name('share');
+Route::resource('shares', SharesController::class);
+Route::get('/self_share_history',[SharesController::class, 'sharesHistory'])->name('self_share_history');
+Route::get('/share',[SharesController::class, 'index'])->name('share');
 
 //---adoption---//
 Route::resource('adoptions',AdoptionController::class);

@@ -25,7 +25,7 @@
             <div class="d-flex">
                 <div>
                     <input accept="image/*" type='file' id="imgInp" name="path"  /><br><br>
-                    <img src="{{ URL::asset('storage/images/' . $adoption->path)}}" style="width:150px;height:150px">
+                    <img src="{{ URL::asset('storage/images/' . $adoption->path)}}" id="blah" src="#" style="width:150px;height:150px">
                     <br>
                     <script>
                         imgInp.onchange = evt => {
