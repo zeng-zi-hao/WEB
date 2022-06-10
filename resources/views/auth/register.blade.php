@@ -36,21 +36,21 @@
             </div>
 
             <div>
-                <table style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">
+                <table>
                     <tr style="height: 60px">
-                        <th class="font-medium">姓名:</th>
+                        <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">姓名:</th>
                         <th><input type="text" name="name" value="{{old('name')}}" size="22"></th>
                     </tr>
                     <tr style="height: 60px">
-                        <th class="font-medium">電子郵件:</th>
+                        <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">電子郵件:</th>
                         <th><input type="email" name="email" value="{{old('email')}}" size="22"></th>
                     </tr>
                     <tr style="height: 60px">
-                        <th class="font-medium">密碼:</th>
+                        <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">密碼:</th>
                         <th><input type="password" name="password" size="22"></th>
                     </tr>
                     <tr style="height: 60px">
-                        <th class="font-medium">確認密碼:</th>
+                        <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">確認密碼:</th>
                         <th><input type="password" name="confirm_password" size="22"></th>
                     </tr>
                 </table>
