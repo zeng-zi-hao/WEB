@@ -38,12 +38,16 @@
                     <a href="{{route('root')}}" class="rounded-full"><img src="{{ URL::asset('storage/images/logo_1.jpg')}}"  class="rounded-full border-2" style="width:150px;height:150px"></a>
                 </div>
 
-                <div>
-                    帳號:&nbsp;&nbsp;&nbsp;<input type="text" name='email' size="22">
-                    <br><br>
-                    密碼:&nbsp;&nbsp;&nbsp;<input type="password" name="password" size="22">
-                    <br><br>
-                </div>
+                <table>
+                    <tr style="height: 60px">
+                        <th class="font-medium">電子郵件:</th>
+                        <th><input type="text" name='email' size="22"></th>
+                    </tr>
+                    <tr style="height: 60px">
+                        <th class="font-medium">密碼:</th>
+                        <th><input type="password" name="password" size="22"></th>
+                    </tr>
+                </table>
 
                 <div class="flex justify-end">
                     <div class="action"><button type="submit" class="mr-3 bg-blue-500 hover:underline rounded p-1 text-white">登入</button></div>

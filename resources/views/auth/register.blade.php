@@ -17,25 +17,22 @@
     <div class="flex h-screen">
 
         <div class="m-auto">
-
-            @if($errors->any())
-                <div class="errors p-3 bg-red-500 rounded">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                <br>
-            @endif
-
-
+                @if($errors->any())
+                    <div class="errors p-3 bg-red-500 rounded">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <br>
+                @endif
 
             <div class="m-3 flex justify-center">
                 <a href="{{route('root')}}" class="rounded-full"><img src="{{ URL::asset('storage/images/logo_2.jpg')}}"  class="rounded-full border-2" style="width:150px;height:190px"></a>
             </div>
 
-            <div>
+            <div class="m-3 flex justify-center">
                 <table>
                     <tr style="height: 60px">
                         <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">姓名:</th>
@@ -56,7 +53,7 @@
                 </table>
             </div>
 
-            <div class="flex justify-end">
+            <div class="ml-5 flex justify-center">
                 <a href="{{route('login')}}" class="mr-3 p-1 text-indigo-900">已經註冊過了</a>
                 <div class="action">
                     <button type="submit" class="mr-2 bg-blue-500 hover:underline rounded p-1 text-white">註冊</button>
