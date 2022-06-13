@@ -30,8 +30,8 @@ class SharesController extends Controller
 
     public function store(Request $request){
         $content = $request->validate([
-            'title' => 'required',
-            'content' => 'required|min:10'
+            'title' => 'required|max:100',
+            'content' => 'required|min:10|max:255'
         ]);
 
         auth()->user()->shares()->create($content);
@@ -50,7 +50,7 @@ class SharesController extends Controller
     public function update(Request $request, $share_id){
         $share = auth()->user()->shares->find($share_id);
         $content = $request->validate([
-           'title' => 'required|max:255',
+           'title' => 'required|max:100',
            'content' => 'required|min:10|max:255'
         ]);
 
