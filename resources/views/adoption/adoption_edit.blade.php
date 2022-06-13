@@ -40,7 +40,7 @@
                 <div>
                     <div class="field my-2">
                         <label>寵物名稱</label>&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="pet_name" value="{{$adoption -> pet_name}}" class="border-gray-400 p-1">
+                        <input type="text" name="pet_name" maxlength="150" value="{{$adoption -> pet_name}}" class="border-gray-400 p-1">
                     </div>
                     <br>
 
@@ -51,19 +51,19 @@
 
                     <div class="field my-1">
                         <label>年齡</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="age" value="{{$adoption -> age}}" class="border-gray-400 p-1">
+                        <input type="text" name="age" maxlength="3" value="{{$adoption -> age}}" class="border-gray-400 p-1">
                     </div>
                     <br>
 
                     <div class="field my-2">
                         <label>健康狀況</label>&nbsp;&nbsp;&nbsp;
-                        <textarea name="health_status" cols="25" rows="3" class="border-gray-400">{{$adoption -> health_status}}</textarea>
+                        <textarea name="health_status" cols="25" rows="3" maxlength="150" class="border-gray-400">{{$adoption -> health_status}}</textarea>
                     </div>
                     <br>
 
                     <div class="field my-1">
                         <label>送養原因&nbsp;&nbsp;</label>
-                        <textarea name="adoption_reason" cols="25" rows="8" class="border-gray-400">{{$adoption -> adoption_reason}}</textarea>
+                        <textarea name="adoption_reason" cols="25" rows="8" maxlength="300" class="border-gray-400">{{$adoption -> adoption_reason}}</textarea>
                     </div>
                     <br>
 

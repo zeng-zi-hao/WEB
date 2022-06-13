@@ -83,12 +83,12 @@
                         </div>
                         <br><br>
 
-                        <div>
-                            <form action="{{route('cart.order.store')}}" method="post">
-                                @csrf
-                                <button class="mr-3 text-white bg-indigo-500 p-2 hover:underline rounded">結帳</button>
-                            </form>
-                        </div>
+{{--                        <div>--}}
+{{--                            <form action="{{route('cart.order.store')}}" method="post">--}}
+{{--                                @csrf--}}
+{{--                                <button class="mr-3 text-white bg-indigo-500 p-2 hover:underline rounded">結帳</button>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
 
 
                     </div>

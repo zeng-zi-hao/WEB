@@ -71,10 +71,10 @@ class AdoptionController extends Controller
     public function update(Request $request, $id){
         $share = auth()->user()->adoptions->find($id);
         $request->validate([
-            'pet_name' => 'required',
+            'pet_name' => 'required|max:100',
             'age' => 'integer|min:0|max:40',
-            'health_status' => 'required',
-            'adoption_reason' => 'required',
+            'health_status' => 'required|max:100',
+            'adoption_reason' => 'required|max:255',
             'path' => 'required|mimes:jpeg,png,jpeg|max:5048',
         ]);
 

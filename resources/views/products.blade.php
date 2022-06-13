@@ -7,9 +7,9 @@
                 購物車 {{ Cart::getTotalQuantity()}}
             </a>
 
-            <a href="{{route('order_list')}}" class="text-white bg-indigo-500 p-2 rounded ">
-                我的訂單
-            </a>
+{{--            <a href="{{route('order_list')}}" class="text-white bg-indigo-500 p-2 rounded ">--}}
+{{--                我的訂單--}}
+{{--            </a>--}}
         </div>
 
         <div class="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
