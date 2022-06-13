@@ -3,8 +3,12 @@
 @section('products_list')
     <div class="container px-6 mx-auto">
         <div class="my-3">
-            <a href="{{ route('cart.list') }}" class="text-white bg-indigo-500 p-2 rounded ">
+            <a href="{{ route('cart.list') }}" class="mr-3 text-white bg-indigo-500 p-2 rounded ">
                 購物車 {{ Cart::getTotalQuantity()}}
+            </a>
+
+            <a href="{{route('order_list')}}" class="text-white bg-indigo-500 p-2 rounded ">
+                我的訂單
             </a>
         </div>
 

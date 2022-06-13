@@ -13,7 +13,7 @@
             <div class="border-t border-gray-300 my-1 p-2">
                 <h2 class="text-lg font-bold">
                     <a href="{{route('shares.show',$history)}}" class="text-indigo-500 text-2xl">
-                        {{$history->title}}
+                        {{\Illuminate\Support\str::limit($history->title,20,'...')}}
                     </a>
                 </h2>
 

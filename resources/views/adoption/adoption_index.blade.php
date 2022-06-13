@@ -13,7 +13,7 @@
                     <div class="px-5 py-3">
                         <a href="{{route('adoptions.show',$adoption)}}"><img src="{{ URL::asset('storage/images/' . $adoption->path)}}" class="rounded-2xl" style="width:150px;height:150px"></a>
                         <h3 class="text-gray-700 uppercase">{{ \Illuminate\Support\str::limit($adoption->pet_name,5,'...') }}</h3>
-                        <span class="mt-2 text-gray-500">性別: {{ $adoption->gender }}&nbsp;&nbsp;年齡: {{ $adoption->age }}</span>
+                        <span class="mt-2 text-gray-500">性別: {{ $adoption->gender }}&nbsp;&nbsp;年齡: {{ $adoption->age }}歲</span>
                     </div>
                 </div>
             @endforeach

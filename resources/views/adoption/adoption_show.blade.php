@@ -9,7 +9,7 @@
         <br>
         <h1 class="text-3xl font-bold">寵物名稱:{{$adoptions->pet_name}}</h1>
         <br>
-        <p>年齡&nbsp;&nbsp;&nbsp;{{$adoptions->age}}</p>
+        <p>年齡&nbsp;&nbsp;&nbsp;{{$adoptions->age}}歲</p>
         <p>性別&nbsp;&nbsp;&nbsp;{{$adoptions->gender}}</p>
 
         <p>

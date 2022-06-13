@@ -2,20 +2,19 @@
 
 @section('profile')
     <div class="m-8" style="width: auto">
-
-        <form action="{{route('update_information')}}" method="post">
+        <form method="post">
             @csrf
             @method('patch')
             <table>
-                <tr>
-                    <th><label>修改名稱</label><br></th>
+                <tr style="height: 60px">
+                    <th class="font-medium text-2xl" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">修改名稱<br></th>
                 </tr>
-                <tr>
-                    <th>姓名:</th>
+                <tr style="height: 30px">
+                    <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">姓名:</th>
                     <th><input></th>
                 </tr>
                 <tr>
-                    <th>電子郵件:</th>
+                    <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">電子郵件:</th>
                     <th><input></th>
                 </tr>
                 <tr>
@@ -23,20 +22,20 @@
                 </tr>
             </table>
         </form>
-
-        <form action="{{route('update_password')}}" method="post">
+        <br>
+        <form method="post">
             @csrf
             @method('patch')
             <table>
-                <tr>
-                    <th><label>修改密碼</label><br></th>
+                <tr style="height: 60px">
+                    <th class="font-medium text-2xl" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">修改密碼<br></th>
                 </tr>
                 <tr>
-                    <th>新密碼:</th>
+                    <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">新密碼:</th>
                     <th><input></th>
                 </tr>
                 <tr>
-                    <th>確認密碼:</th>
+                    <th class="font-medium" style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">確認密碼:</th>
                     <th><input></th>
                 </tr>
                 <tr>
@@ -45,4 +44,6 @@
             </table>
         </form>
     </div>
+
 @endsection
+

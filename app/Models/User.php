@@ -74,4 +74,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Adoption');
     }
 
+//    public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
+//    {
+//        return $this->hasMany('App\Models\Order');
+//    }
+
 }

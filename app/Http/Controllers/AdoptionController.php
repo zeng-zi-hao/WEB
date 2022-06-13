@@ -20,6 +20,9 @@ class AdoptionController extends Controller
 
     public function show($id){
         $adoption = Adoption::find($id);
+        if(!$adoption){
+            abort(404);
+        }
         return view('adoption/adoption_show',['adoptions'=>$adoption]);
     }
 
@@ -59,6 +62,9 @@ class AdoptionController extends Controller
 
     public function edit($id){
         $adoption = auth()->user()->adoptions->find($id);
+        if(!$adoption){
+            abort(404);
+        }
         return view('adoption/adoption_edit',['adoption'=>$adoption]);
     }
 

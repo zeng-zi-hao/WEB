@@ -12,8 +12,8 @@
                 <div class="w-55 max-w-sm mx-auto overflow-hidden rounded-md shadow-md">
                     <div class="px-5 py-3">
                         <a href="{{route('adoptions.show',$history)}}"><img src="{{ URL::asset('storage/images/' . $history->path)}}" class="rounded-2xl" style="width:150px;height:150px"></a>
-                        <h3 class="text-gray-700 uppercase">{{ $history->pet_name }}</h3>
-                        <span class="mt-2 text-gray-500">{{ $history->gender }}&nbsp;&nbsp;{{ $history->age }}</span>
+                        <h3 class="text-gray-700 uppercase">{{ \Illuminate\Support\str::limit($history->pet_name,5,'...')}}</h3>
+                        <span class="mt-2 text-gray-500">{{ $history->gender }}&nbsp;&nbsp;{{ $history->age }}歲</span>
                         <br><br>
                         <div class="flex">
                             <a class="mr-2" href="{{route('adoptions.edit',$history)}}">Edit</a>

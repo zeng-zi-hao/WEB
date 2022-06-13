@@ -18,6 +18,9 @@ class SharesController extends Controller
 
     public function show($share_id){
         $share = Share::find($share_id);
+        if(!$share){
+            abort(404);
+        }
         return view('shares.show',['shares'=>$share]);
     }
 
@@ -37,6 +40,9 @@ class SharesController extends Controller
 
     public function edit($share_id){
         $share = auth()->user()->shares->find($share_id);
+        if(!$share){
+            abort(404);
+        }
         return view('shares.edit',['shares'=>$share]);
 
     }
